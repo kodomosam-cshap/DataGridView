@@ -1,0 +1,19 @@
+dataGridViewEditarOS.DataSource = da.selecionarItensEditarOS(txtIDOS.Text);
+
+//esta opcao formata automaticamente o dataGridView
+dataGridViewEditarOS.AutoResizeColumns();
+dataGridViewEditarOS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+//desta forma formata a coluna com a largura especifica 
+foreach (DataGridViewColumn column in dataGridViewEditarOS.Columns)
+{
+	if (column.DataPropertyName == "QTD")
+		column.Width = 50; 
+	if (column.DataPropertyName == "ITEM")
+		column.Width = 525; 
+	if (column.DataPropertyName == "VALOR")
+		column.Width = 90; 
+
+	//column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+}
